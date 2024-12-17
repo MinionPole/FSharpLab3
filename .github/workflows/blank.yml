@@ -29,7 +29,7 @@ jobs:
     - name: Lint
       run: |
         dotnet fsharplint lint src/*/*.fsproj
-        dotnet fsharplint lint tests/*/*.fsproj
+        dotnet fsharplint lint test/*/*.fsproj
     - name: Build
       run: dotnet build --no-restore
     - name: Test

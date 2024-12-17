@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "wx9nZ2U1BVCN01Hov9lB1Y2NeE40E8hPUEpmFilbgGIeJDDZdzlc2HtK8Hyr6qcg31YN865vGvFB1DCRz03YgQ==",
+  "success": true,
+  "projectFilePath": "/home/roman/labs/F#/FSharpLab3/test/FSharpLab3Test/FSharpLab3Test.fsproj",
+  "expectedPackageFiles": [
+    "/home/roman/.nuget/packages/fsharp.core/6.0.1/fsharp.core.6.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

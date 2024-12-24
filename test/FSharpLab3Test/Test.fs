@@ -6,8 +6,7 @@ open Interpol
 open FsCheck.Xunit
 open System.Collections.Generic
 
-let abs x = if x >= 0 then x else -x
-
+let abs x = if x >= 0.0 then x else -x
 
 let compareResult part1 part2 =
     Seq.forall2 (fun pair1 pair2 -> (abs ((snd pair1) - (snd pair2)) <= 0.01)) part1 part2

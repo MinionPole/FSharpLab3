@@ -38,3 +38,32 @@ let ``linear test`` () =
         }
 
     Assert.True(compareResult expected actual)
+
+[<Fact>]
+let ``newton test`` () =
+    let x =
+        seq {
+            yield 0.000
+            yield 1.571
+            yield 3.142
+        }
+
+    let y =
+        seq {
+            yield 0.000
+            yield 1.000
+            yield 0.000
+        }
+
+    let actual = newtonInterpolation (Seq.zip x y) 0.00 1.00
+
+    let expected =
+        seq {
+            (0.0, 0.0)
+            (1.0, 0.8678948202)
+            (2.0, 0.9254303312)
+            (3.0, 0.1726065329)
+            (4.0, -1.390576575)
+        }
+
+    Assert.True(compareResult expected actual)

@@ -112,6 +112,6 @@ let main (args) =
               Func = newtonInterpolationSequence }
 
         doWhileRecursively (Seq.singleton newton)
-    | _ -> printfn "Неизвестный аргумент"
+    | _ -> printfn "unknown arg"
 
     0

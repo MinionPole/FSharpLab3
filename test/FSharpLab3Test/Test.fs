@@ -55,7 +55,7 @@ let ``newton test`` () =
             yield 0.000
         }
 
-    let actual = newtonInterpolation (Seq.zip x y) 0.00 1.00
+    let actual = newtonInterpolationSequence (Seq.zip x y) 0.00 1.00
 
     let expected =
         seq {

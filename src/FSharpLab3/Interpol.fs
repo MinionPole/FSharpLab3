@@ -4,10 +4,6 @@ module Interpol
 let linearInterpolationFunc (x0: float) (y0: float) (x1: float) (y1: float) (x: float) =
     y0 * (x1 - x) / (x1 - x0) + y1 * (x - x0) / (x1 - x0)
 
-let prepareXY (x: seq<float>) (y: seq<float>) =
-    let xy = Seq.zip x y
-    Seq.pairwise xy
-
 let rec doInterpolation xyPairs currentStep incStep =
     match Seq.tryHead xyPairs with
     | None -> Seq.empty

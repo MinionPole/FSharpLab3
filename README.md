@@ -106,5 +106,5 @@ let rec doWhileRecursively (states: seq<ApproxState>) =
 Интерполяция обеих видов
 ![оба метода](./img/both.png)
 
-Линейная интерполяция
+Линейная
 ![линейный](./img/linear.png)

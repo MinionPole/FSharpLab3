@@ -9,12 +9,12 @@ let rec doInterpolation xyPairs currentStep incStep =
     | None -> Seq.empty
     | Some((x0, y0), (x1, y1)) ->
         let newY = linearInterpolationFunc x0 y0 x1 y1 currentStep
-        let resultSeq = seq { yield (currentStep, newY) }
-
+        //printfn "x0=%f, x1=%f, nowx = %f\n" x0 x1 currentStep
         if currentStep >= x0 && currentStep <= x1 then
+            let resultSeq = seq { yield (currentStep, newY) }
             Seq.append resultSeq (doInterpolation xyPairs (currentStep + incStep) incStep)
         else
-            Seq.append resultSeq (doInterpolation (Seq.tail xyPairs) currentStep incStep)
+            doInterpolation (Seq.tail xyPairs) currentStep incStep
 
 let linearInterpolation xy (currentStep: float) (incStep: float) =
     doInterpolation (Seq.pairwise xy) currentStep incStep
@@ -64,4 +64,4 @@ let rec newtonInterpolationSequence xy currentStep stepIncrement =
 
         Seq.append currentValue nextValue
     else
-        seq { yield currentStep, newtonInterpolationValue xy currentStep }
+        Seq.empty

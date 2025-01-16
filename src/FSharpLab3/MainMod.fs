@@ -48,11 +48,17 @@ let main (args) =
     let step = Console.ReadLine() |> float
     let firstPoint = readPoint ()
     let secondPoint = readPoint ()
-    let someSeq = seq {firstPoint; secondPoint}
+
+    let someSeq =
+        seq {
+            firstPoint
+            secondPoint
+        }
+
     match args with
     | [| "both" |] ->
 
-        
+
         let result = linearInterpolation someSeq (fst (Seq.head someSeq)) step
         printfn "%s\n" "Linear"
 
@@ -73,7 +79,12 @@ let main (args) =
               Step = step
               Func = newtonInterpolationSequence }
 
-        doWhileRecursively (seq { linear; newton})
+        doWhileRecursively (
+            seq {
+                linear
+                newton
+            }
+        )
     | [| "linear" |] ->
         let someSeq = seqAdd (Seq.singleton firstPoint) secondPoint
 
@@ -91,11 +102,11 @@ let main (args) =
               Step = step
               Func = linearInterpolation }
 
-        doWhileRecursively (seq {linear})
+        doWhileRecursively (seq { linear })
     | [| "newton" |] ->
 
         let thirdPoint = readPoint ()
-        let someSeq2 = seqAdd someSeq thirdPoint 
+        let someSeq2 = seqAdd someSeq thirdPoint
 
         let result = newtonInterpolationSequence someSeq2 (fst (Seq.head someSeq2)) step
         printfn "%s\n" "Newton"
@@ -111,7 +122,7 @@ let main (args) =
               Step = step
               Func = newtonInterpolationSequence }
 
-        doWhileRecursively (seq {newton})
+        doWhileRecursively (seq { newton })
     | _ -> printfn "unknown arg"
 
     0

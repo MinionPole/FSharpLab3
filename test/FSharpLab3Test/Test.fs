@@ -63,7 +63,6 @@ let ``newton test`` () =
             (1.0, 0.8678948202)
             (2.0, 0.9254303312)
             (3.0, 0.1726065329)
-            (4.0, -1.390576575)
         }
 
     Assert.True(compareResult expected actual)

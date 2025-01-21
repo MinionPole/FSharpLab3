@@ -104,7 +104,9 @@ let rec doWhileRecursively (states: seq<ApproxState>) =
 
 В качестве аргумента можно выбирать сколько методов использовать.
 Интерполяция обеих видов
+
 ![оба метода](./img/both.png)
 
 Линейная
+
 ![линейный](./img/linear.png)
